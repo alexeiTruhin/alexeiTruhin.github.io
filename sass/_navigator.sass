@@ -1,0 +1,62 @@
+nav
+  background: $blue-dark
+  .wrapper
+    +container
+  ul.menu
+    list-style-type: none
+    margin: 0
+    padding: 0
+    li
+      margin: 0
+      display: inline-block
+      a
+        +fontParams(14px, 78px)
+        +scale(padding, 0 12px)
+        +scale(margin-right, 5px)
+        background: $blue-dark
+        color: $white
+        display: inline-block
+        font-family: 'Arial'
+        font-weight: bold
+        text-transform: uppercase
+      &.milab
+        a
+          text-transform: none
+  ul.contacts
+    display: none
+    list-style-type: none
+    margin: 0
+    padding: 0
+    text-align: right
+    +scale(padding-top, 24px)
+    li
+      margin: 0
+      display: inline-block
+      a
+        +fontsize-rem(24px)
+        +icons
+        +scale(margin-left, 20px)
+        color: $white
+        cursor: pointer
+      &.email
+        a
+          +fontsize-rem(28px)
+          position: relative
+          top: 1px
+          &:after
+            @extend .email_icon
+      &.fb
+        a
+          &:after
+            @extend .facebook_icon
+      &.twitter
+        a
+          &:after
+            @extend .twitter_icon
+
++at-breakpoint($tablet)
+  nav
+    ul
+      +span-columns(3,6)
+    ul.contacts
+      display: block

@@ -1,0 +1,62 @@
+/*WARNING++++++++++++++++++++++++++++++++++++++++++++*/
+/*DO NOT EDIT styles.css file, this should be generated only by compiler*/
+/*Propeople INC, SPS*/
+
+@import compass
+@import susyone
+@import reset
+@import colors
+@import extends
+
+//FONTS
+// FONTS icons
++font-face("icons", font-files("icons.woff", "woff", "icons.ttf", "truetype", "icons.svg#icons", "svg"), "icons.eot", normal, normal)
+// FONTS Raleway
++font-face("Raleway", font-files("Raleway.woff", "woff", "Raleway.ttf", "truetype", "Raleway.svg#Raleway", "svg"), "Raleway.eot", normal, normal)
+// FONTS RobotoSlab
++font-face("RobotoSlab", font-files("RobotoSlab-Regular.woff", "woff", "RobotoSlab-Regular.ttf", "truetype", "RobotoSlab-Regular.svg#RobotoSlab-Regular", "svg"), "RobotoSlab-Regular.eot", normal, normal)
++font-face("RobotoSlab", font-files("RobotoSlab-Light.woff", "woff", "RobotoSlab-Light.ttf", "truetype", "RobotoSlab-Light.svg#RobotoSlab-Light", "svg"), "RobotoSlab-Light.eot", $light, normal)
++font-face("RobotoSlab", font-files("RobotoSlab-Thin.woff", "woff", "RobotoSlab-Thin.ttf", "truetype", "RobotoSlab-Thin.svg#RobotoSlab-Thin", "svg"), "RobotoSlab-Thin.eot", $thin, normal)
+// FONTS SourceSansPro
++font-face("SourceSansPro", font-files("SourceSansPro-Regular.woff", "woff", "SourceSansPro-Regular.ttf", "truetype", "SourceSansPro-Regular.svg#SourceSansPro-Regular", "svg"), "SourceSansPro-Regular.eot", normal, normal)
++font-face("SourceSansPro", font-files("SourceSansPro-Light.woff", "woff", "SourceSansPro-Light.ttf", "truetype", "SourceSansPro-Light.svg#SourceSansPro-Light", "svg"), "SourceSansPro-Light.eot", $light, normal)
++font-face("SourceSansPro", font-files("SourceSansPro-It.woff", "woff", "SourceSansPro-It.ttf", "truetype", "SourceSansPro-It.svg#SourceSansPro-It", "svg"), "SourceSansPro-It.eot", normal, italic)
++font-face("SourceSansPro", font-files("SourceSansPro-Semibold.woff", "woff", "SourceSansPro-Semibold.ttf", "truetype", "SourceSansPro-Semibold.svg#SourceSansPro-Semibold", "svg"), "SourceSansPro-Semibold.eot", $semibold, normal)
++font-face("SourceSansPro", font-files("SourceSansPro-BoldIt.woff", "woff", "SourceSansPro-BoldIt.ttf", "truetype", "SourceSansPro-BoldIt.svg#SourceSansPro-BoldIt", "svg"), "SourceSansPro-BoldIt.eot", bold, italic)
++font-face("SourceSansPro", font-files("SourceSansPro-Bold.woff", "woff", "SourceSansPro-Bold.ttf", "truetype", "SourceSansPro-Bold.svg#SourceSansPro-Bold", "svg"), "SourceSansPro-Bold.eot", bold, normal)
+
+
+//GRID SETUP
+// max-width: 930px
+// column-width: 120px
+// gutter: 30px
+// columns: 6
+// margin-width: 30px
+$column-width: 120px
+$gutter-width: 30px
+$grid-padding: 30px
+
+//COLUMNS SETUP
+$total-columns: 2
+$tablet: 4
+$desktop: 6
+
+$container-style: magic
+$container-width: container-outer-width($desktop)
+
++border-box-sizing
+
+$legacy-support-for-ie: false
+$breakpoint-ie-output: false
+
+//IMPORT ELEMENTS
+@import icons
+@import typography
+
+@import layout
+
+@import header
+@import navigator
+@import footer
+
+@import body

@@ -1,0 +1,74 @@
+footer.main
+  +container
+  +scale(padding-bottom, 14px)
+  +scale(padding-top, 14px)
+  p
+    +fontParams(16px, 19.2px)
+    +scale(padding-bottom, 6px)
+    +scale(padding-top, 6px)
+    color: $purpleBlue
+    a
+      +semibold
+      color: $purpleBlue
+    .frontend
+    .thebigpixel
+      img
+        +scale(bottom, -6px)
+        display: inline
+        position: relative
+
+.partners
+  +scale(padding-top, 40px)
+  +scale(padding-bottom, 25px)
+  background: $white
+  .wrapper
+    +container
+  .title
+    h5
+      +fontParams(22px, 30px)
+      +normal
+      +robotoSlab
+      +scale(padding-top, 21px)
+      color: $orange
+      text-align: center
+      text-transform: uppercase
+  .content
+    text-align: center
+    img
+      +scale(padding, 20px 25px)
+      display: block
+      margin: 0 auto
+
+
+    p
+      +fontParams(16px, 30px)
+      color: $purpleBlue
+
++at-breakpoint($tablet)
+  .partners
+    .title
+    .content
+      img
+        +scale(padding, 20px 25px)
+        display: inline-block
+        margin: 0
+
+
++at-breakpoint($desktop)
+  .partners
+    .title
+      +span-columns(1, 6)
+      h5
+        text-align: left
+    .content
+      text-align: left
+      +span-columns(5 omega, 6)
+      text-align: right
+      img
+        +scale(padding, 0 25px)
+        float: left
+        position: relative
+        &.moldcell
+          top: 20px
+        &.cntm
+          top: -21px

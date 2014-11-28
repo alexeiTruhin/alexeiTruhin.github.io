@@ -1,0 +1,149 @@
+@function em($target, $context: $base-font-size)
+  @if $target == 0
+    @return 0
+  @return $target / $context + 0em
+
+=no-select
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=opacity($trans)
+  filter: alpha(opactiy = $trans * 100)
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})"
+  -moz-opacity: $trans
+  -khtml-opacity: $trans
+  opacity: $trans
+
+=icons
+  font-family: "icons"
+  font-weight: normal
+  font-style: normal
+  text-indent: 0
+  speak: none
+  line-height: 1
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+=thin
+  font-weight: 100
+$thin: 100
+
+=light
+  font-weight: 300
+$light: 300
+
+=normal
+  font-weight: 400
+$normal: 400
+
+=semibold
+  font-weight: 600
+$semibold: 600
+
+=bold
+  font-weight: 700
+$bold: 700
+
+=extrabold
+  font-weight: 800
+$extrabold: 800
+
+=helvetica
+  font-family: "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+
+=raleway
+  font-family: "Raleway", Arial, Helvetica, sans-serif
+
+=robotoSlab
+  font-family: "RobotoSlab", "Times New Roman", Times, serif
+
+=sourceSansPro
+  font-family: "SourceSansPro", Arial, Helvetica, sans-serif
+
+=placeholder($color, $hide)
+  &:focus
+    outline: 0 none
+  &::-webkit-input-placeholder
+    color: $color
+  &:-moz-placeholder
+    color: $color
+  &::-moz-placeholder
+    color: $color
+  &:-ms-input-placeholder
+    color: $color
+  &.placeholder
+    color: $color
+
+%clearfix
+  *zoom: 1
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+=reset-container
+  max-width: 100%
+  _width: auto
+  padding-left: 0
+  padding-right: 0
+  margin-left: 0
+  margin-right: 0
+
+//Base font size
+$base-font-size: 16px
+
+//Function to return size in REM units calculated based on default font size value.
+//This is used as a reference
+//(px)
+@function calculateRem($size)
+  $remSize: $size / $base-font-size
+  @return #{$remSize}rem
+
+//DEFAULT font-size FUNCTION
+//Add font-size properties in px only.
+//Use this function as a default font-size parameter that will use global line height.
+//(px)
+=fontsize-rem($size)
+  font-size: $size
+  font-size: calculateRem($size)
+
+//Add font size params if you are required to set specific line height.
+//The same as defaut font-size function the only exception added here is calculated line-height in REM units (based on given px units values).
+//(px,px)
+=fontParams($size, $lh)
+  font-size: $size
+  line-height: $lh
+  font-size: calculateRem($size)
+  line-height: calculateRem($lh)
+
+=scale($property, $values)
+  // Create a couple of empty lists as output buffers.
+  $px-values: ()
+  $rem-values: ()
+  // Loop through the $values list
+  @each $value in $values
+    // For each property value, if it's in rem or px, derive both rem and
+    // px values for it and add those to the end of the appropriate buffer.
+    // Ensure all pixel values are rounded to the nearest pixel.
+    @if $value == 0 or $value == 0px
+      // 0 -- use it without a unit
+      $px-values: join($px-values, 0)
+      $rem-values: join($rem-values, 0)
+    @else if type-of($value) == number and not unitless($value) and unit($value) == px
+      // px value given - calculate rem value from base-font-size
+      $new-rem-value: $value / $base-font-size
+      $px-values: join($px-values, round($value))
+      $rem-values: join($rem-values, #{$new-rem-value}rem)
+    @else
+      // unitless value - use those directly as rem and calculate the px-fallback
+      $px-values: join($px-values, round($value * $base-font-size))
+      $rem-values: join($rem-values, #{$value}rem)
+  // output the converted rules
+  #{$property}: $px-values
+  #{$property}: $rem-values
