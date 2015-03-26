@@ -1,0 +1,649 @@
+html {
+  font-size: 16px;
+}
+
+html, body {
+  @include font-proxima_nova;
+}
+
+a {
+  text-decoration: none;
+  color: rgba($color-blue-dark, .75);
+}
+
+.container {
+  @include scale(padding-left, 10px);
+  @include scale(padding-right, 10px);
+}
+
+.main-header {
+  position: relative;
+  overflow: hidden;
+  .main-nav {
+    position: relative;
+    z-index: 3;
+  }
+  .logo {
+    @include scale(padding-top, 18px);
+    float: left;
+  }
+  .main-menu {
+    @include scale(padding-top, 28px);
+    float: right;
+
+    li {
+
+    }
+
+    a {
+      @include scale(font-size, 15px);
+      color: $color-white;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        color: $color-white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.top-video {
+  min-width: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+
+  video {
+    background: url('../images/polina.jpg') no-repeat;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    min-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.top-video-bg {
+  background: rgba($color-blue, .7);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.main-header-description {
+  @include scale(padding, 50px 0 0 );
+  position: relative;
+  z-index: 3;
+  h1 {
+    @include scale(font-size, 24px);
+    @include semibold;
+    @include scale(margin-bottom, 20px);
+    color: $color-white;
+    text-align: center;
+
+    span {
+      color: $color-orange;
+    }
+  }
+
+  h3 {
+    @include scale(padding-bottom, 8px);
+    @include scale(font-size, 18px);
+    color: $color-orange;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .main-header-btns {
+    font-size: 0;
+    text-align: center;
+    a {
+      @include scale(margin-bottom, 12px);
+      color: $color-white;
+      display: block;
+    }
+  }
+}
+
+
+.main {
+  .properties {
+    @include scale(padding, 40px 0 0);
+    background: $color-grey;
+    .market {
+      @include scale(padding, 0 0 30px);
+      @extend .clearfix;
+    }
+
+    .market-title {
+      @include scale(padding-bottom, 40px);
+      h2 {
+        @include scale(font-size, 24px);
+        @include semibold;
+        @include scale(padding-bottom, 9px);
+        color: $color-orange;
+        text-align: center;
+      }
+
+      p {
+        @include scale(font-size, 14px);
+        color: $color-blue;
+        text-align: center;
+      }
+    }
+
+    .market-block {
+      @include scale(padding-bottom, 20px);
+    }
+
+    .market-block-title {
+      @include font-lubalin;
+      @include scale(font-size, 80px);
+      @include semibold;
+      @include scale(padding-bottom, 20px);
+      color: $color-blue;
+      text-align: center;
+    }
+
+    .market-block-content {
+      color: $color-blue-dark;
+      text-align: center;
+
+      .market-blc-tilte {
+        @include scale(padding-bottom, 20px);
+        @include scale(font-size, 24px);
+        text-transform: uppercase;
+      }
+    }
+
+    .brands {
+      text-align: center;
+    }
+    .brands-title {
+      @include scale(font-size, 18px);
+      font-weight: normal;
+      color: $color-orange;
+      text-align: center;
+    }
+  }
+
+  .slideshow {
+    @include scale(padding, 30px 0 45px);
+
+    .slide-title {
+      @include scale(margin-bottom, 25px);
+      @extend .clearfix;
+      text-align: center;
+
+      h2 {
+        @include scale(font-size, 28px);
+        @include semibold;
+        color: $color-blue;
+      }
+    }
+
+    .slides {
+      @include scale(padding-bottom, 25px);
+      text-align: center;
+    }
+
+    .slide-img {
+      @include scale(margin-bottom, 25px);
+
+      img {
+        @include scale(width, 161px);
+        @include scale(height, 161px);
+        @include border-radius(161px);
+      }
+
+      a {
+        position: relative;
+        font-size: 0;
+      }
+
+      span {
+        @include scale(width, 151px);
+        @include scale(height, 151px);
+        @include scale(bottom, 5px);
+        @include scale(left, 5px);
+        border: 1px solid $color-white;
+        @include border-radius(151px);
+        position: absolute;
+      }
+    }
+
+    .slide-name {
+      @include scale(font-size, 18px);
+      @include scale(margin-bottom, 25px);
+      @include semibold;
+      @include pre(2, 12);
+      @include post(2, 12);
+      color: $color-blue-dark;
+      text-transform: uppercase;
+    }
+
+    .slide-content {
+      @include pre(2, 12);
+      @include post(2, 12);
+      @include scale(font-size, 14px);
+    }
+  }
+
+  .join-now {
+    @include scale(padding, 35px 0 30px);
+    background: $color-grey;
+
+    .join-title {
+      @include scale(font-size, 26px);
+      @include scale(padding-bottom, 18px);
+      @include semibold;
+      color: $color-blue;
+      text-align: center;
+
+      span {
+        color: $color-orange;
+      }
+    }
+
+    .join-btns {
+      font-size: 0;
+      text-align: center;
+
+      a {
+        @include scale(margin-bottom, 12px);
+        border-color: $color-blue-dark;
+        color: $color-blue-dark;
+        display: block;
+      }
+    }
+  }
+}
+
+.main-footer {
+  color: $color-white;
+
+  a {
+    color: $color-white;
+  }
+
+  .footer-nav {
+    background: $color-blue;
+  }
+
+  .footer-logo {
+    @include scale(padding, 24px 0 8px);
+  }
+
+  .footer-menu {
+    @include scale(padding,  8px 0 18px);
+
+    li {
+      @include scale(padding, 0 8px);
+      display: inline;
+      line-height: 160%;
+    }
+
+    a {
+      @include scale(font-size, 15px);
+      color: $color-white;
+      text-decoration: none;
+      &:hover {
+        color: $color-white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .copyright {
+    @include scale(font-size, 12px);
+    @include scale(padding, 15px 0);
+    background: $color-blue-dark;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+  @include scale(font-size, 18px);
+  @include semibold;
+  @include border-radius(4px);
+  @include scale(padding, 8px 12px);
+  border: 1px solid $color-white;
+}
+
+
+@include at-breakpoint($tablet) {
+  @include with-grid-settings(9, $column-width, $gutter-width, $grid-padding) {
+    .container {
+      @include container;
+    }
+  }
+
+  .main-header {
+    .main-menu {
+      li {
+        @include scale(padding-left, 32px);
+        display: inline;
+      }
+    }
+  }
+
+  .main-header {
+    @include scale(height, 520px);
+  }
+
+  .top-video {
+    @include scale(max-height, 520px);
+
+    video {
+      @include scale(min-height, 520px);
+    }
+  }
+
+  .main-header-description {
+    @include scale(padding, 100px 0 0 );
+
+    h1 {
+      @include scale(font-size, 48px);
+      @include pre(1, 9);
+      @include span-columns(7, 9);
+      @include post(1, 9);
+      @include scale(margin-bottom, 25px);
+    }
+
+    h3 {
+      @include scale(padding-bottom, 32px);
+      @include scale(font-size, 26px);
+    }
+
+    .main-header-btns {
+      a {
+        display: inline-block;
+        margin: 0 gutter(9)/2;
+        width: columns(3, 9);
+      }
+    }
+  }
+
+
+  .main {
+    .properties {
+      @include scale(padding, 60px 0 0);
+      .market {
+        @include scale(padding, 0 0 40px);
+      }
+
+      .market-title {
+        @include scale(padding-bottom, 60px);
+        h2 {
+          @include scale(font-size, 36px);
+          @include scale(padding-bottom, 12px);
+        }
+
+        p {
+          @include scale(font-size, 21px);
+        }
+      }
+
+      .market-block {
+        @include span-columns(3, 9);
+        &:last-child {
+          @include omega;
+        }
+      }
+
+      .market-block-title {
+        @include scale(font-size, 115px);
+        @include scale(padding-bottom, 60px);
+      }
+
+      .market-block-content {
+        .market-blc-tilte {
+          @include scale(padding-bottom, 10px);
+          @include scale(font-size, 21px);
+        }
+      }
+
+      .brands-title {
+        @include scale(font-size, 21px);
+      }
+    }
+
+    .slideshow {
+      @include scale(padding, 40px 0 60px);
+
+      .slide-title {
+        @include pre(1, 9);
+        @include post(1, 9);
+        @include scale(margin-bottom, 40px);
+
+        h2 {
+          @include scale(font-size, 42px);
+        }
+      }
+
+      .slides {
+        @include scale(padding-bottom, 25px);
+      }
+
+      .slide-img {
+        @include scale(margin-bottom, 25px);
+      }
+
+      .slide-name {
+        @include scale(font-size, 24px);
+        @include scale(margin-bottom, 25px);
+        @include pre(1, 9);
+        @include post(1, 9);
+      }
+
+      .slide-content {
+        @include pre(1, 9);
+        @include post(1, 9);
+        @include scale(font-size, 18px);
+      }
+    }
+
+    .join-now {
+      @include scale(padding, 50px 0 40px);
+
+      .join-title {
+        @include pre(1, 9);
+        @include post(1, 9);
+        @include scale(font-size, 46px);
+        @include scale(padding-bottom, 40px);
+      }
+
+      .join-btns {
+        a {
+          display: inline-block;
+          margin: 0 gutter(9)/2;
+          width: columns(3, 9);
+        }
+      }
+    }
+  }
+
+  .main-footer {
+    .footer-menu {
+      text-align: right;
+    }
+  }
+
+}
+
+
+@include at-breakpoint($small-desktop) {
+  @include with-grid-settings(12, $column-width, $gutter-width, $grid-padding) {
+    .container {
+      @include container;
+    }
+  }
+
+  .main-header {
+    @include scale(height, 780px);
+  }
+
+  .top-video {
+    @include scale(max-height, 780px);
+
+    video {
+      @include scale(min-height, 780px);
+    }
+  }
+
+  .main-header-description {
+    @include scale(padding, 200px 0 0 );
+
+    h1 {
+      @include scale(font-size, 48px);
+      @include pre(2, 12);
+      @include span-columns(8, 12);
+      @include post(2, 12);
+      @include scale(margin-bottom, 50px);
+    }
+
+    h3 {
+      @include scale(padding-bottom, 32px);
+      @include scale(font-size, 26px);
+    }
+
+    .main-header-btns {
+      a {
+        display: inline-block;
+        margin: 0 gutter(12)/2;
+        width: columns(3, 12);
+      }
+    }
+  }
+
+  .main {
+    .properties {
+      @include scale(padding, 80px 0 0);
+      background: $color-grey url(../images/line-bg.png) center 350px no-repeat;
+
+      .market {
+        @include scale(padding, 0 0 60px);
+      }
+
+      .market-title {
+        @include scale(padding-bottom, 80px);
+        h2 {
+          @include scale(font-size, 42px);
+          @include scale(padding-bottom, 18px);
+        }
+
+        p {
+          @include scale(font-size, 26px);
+        }
+      }
+
+      .market-block {
+        @include span-columns(4, 12);
+        &:last-child {
+          @include omega;
+        }
+      }
+
+      .market-block-title {
+        @include scale(font-size, 145px);
+        @include scale(padding-bottom, 80px);
+      }
+
+      .market-block-content {
+        .market-blc-tilte {
+          @include scale(padding-bottom, 20px);
+          @include scale(font-size, 24px);
+        }
+      }
+
+      .brands-title {
+        @include scale(font-size, 26px);
+      }
+    }
+
+    .slideshow {
+      @include scale(padding, 60px 0 90px);
+
+      .slide-title {
+        @include pre(2, 12);
+        @include post(2, 12);
+        @include scale(margin-bottom, 50px);
+
+        h2 {
+          @include scale(font-size, 48px);
+        }
+      }
+
+      .slides {
+        @include scale(padding-bottom, 25px);
+      }
+
+      .slide-img {
+        @include scale(margin-bottom, 25px);
+      }
+
+      .slide-name {
+        @include scale(font-size, 24px);
+        @include scale(margin-bottom, 25px);
+        @include pre(2, 12);
+        @include post(2, 12);
+      }
+
+      .slide-content {
+        @include pre(2, 12);
+        @include post(2, 12);
+        @include scale(font-size, 18px);
+      }
+    }
+
+    .join-now {
+      @include scale(padding, 70px 0 60px);
+
+      .join-title {
+        @include pre(2, 12);
+        @include post(2, 12);
+        @include scale(font-size, 52px);
+        @include scale(padding-bottom, 50px);
+      }
+
+      .join-btns {
+        a {
+          display: inline-block;
+          margin: 0 gutter(12)/2;
+          width: columns(3, 12);
+        }
+      }
+    }
+  }
+
+  .main-footer {
+
+    .footer-logo {
+      @include scale(padding,  24px 0);
+      float: left;
+    }
+
+    .footer-menu {
+      @include scale(padding,  32px 0 24px);
+      float: right;
+
+      li {
+        @include scale(padding-left, 32px);
+      }
+    }
+  }
+}

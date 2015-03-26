@@ -1,0 +1,236 @@
+//jQuery FlexSlider v2.2.0
+//http:/www.woothemes.com/flexslider/
+//Copyright 2012 WooThemes
+//Free to use under the GPLv2 license.
+//http://www.gnu.org/licenses/gpl-2.0.html
+//Contributing author: Tyler Smith (@mbmufffin)
+
+// Browser Resets
+// Avoid scroll bar issues when the slider is next to the edge of the page
+
+
+
+#loader {
+  //+background(image-url("loading.gif") center center no-repeat)
+  //+scale(height, 24px)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  #loader {
+    //+background(image-url("loading@2x.gif") center center no-repeat)
+    //background-size: 24px 24px
+
+  }
+}
+
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus {
+  outline: none;
+}
+
+.slides, .flex-control-nav, .flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// FlexSlider Necessary Styles
+
+.flexslider {
+  @include clearfix;
+  margin: 0;
+  padding: 0;
+  .slides {
+    > li {
+      display: none;
+      -webkit-backface-visibility: hidden;
+      position: relative;
+    }
+    img {
+
+    }
+  }
+}
+
+// Hide the slides before the JS is loaded. Avoids image jumping
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+// Clearfix for the .slides element
+
+.slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+html[xmlns] .slides {
+  display: block;
+}
+
+* html .slides {
+  height: 1%;
+}
+
+//No JavaScript Fallback
+//If you are not using another script, such as Modernizr, make sure you
+//include js that eliminates this class on page load
+
+.no-js .slides > li:first-child {
+  display: block;
+}
+
+// FlexSlider Default Theme
+// *********************************
+
+.flexslider {
+  margin: 0;
+  position: relative;
+  zoom: 1;
+  overflow: hidden;
+}
+
+.flex-viewport {
+  @include scale(max-height, 2000px);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.loading .flex-viewport {
+  @include scale(max-height, 300px);
+}
+
+.flexslider .slides {
+  zoom: 1;
+}
+
+.carousel li {
+  @include scale(margin-right, 5px);
+}
+
+// Direction Nav
+
+.flex-direction-nav {
+  a {
+    @include opacity(1);
+    @include scale(top, 46px);
+    display: block;
+    margin: 0;
+    position: absolute;
+    //top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+    text-indent: -999em;
+  }
+}
+
+.flexslider {
+  .flex-prev {
+    @include opacity(0.7);
+    @include scale(left, 16px);
+  }
+  .flex-next {
+    @include opacity(0.7);
+    @include scale(right, 16px);
+  }
+
+  &:hover {
+    .flex-next,
+    .flex-prev {
+      &:hover {
+        @include opacity(1);
+      }
+    }
+  }
+}
+
+.flex-direction-nav {
+  .flex-disabled {
+    opacity: 0 !important;
+    filter: alpha(opacity = 0);
+    cursor: default;
+  }
+  a {
+    @include scale(width, 50px);
+    @include scale(height, 74px);
+    &:before {
+      @include font-icons;
+      @include scale(font-size, 72px);
+      @include scale(left, -4px);
+      @include font-icons;
+      @extend %icon-prev;
+      text-indent: 0;
+      position: absolute;
+      top: 0;
+      color: $color-orange;
+      display: inline-block;
+    }
+    &.flex-next:before {
+      @extend %icon-next;
+    }
+  }
+}
+
+.flex-control-nav {
+  width: 100%;
+  text-align: center;
+  @include scale(padding-top, 8px);
+  position: relative;
+  z-index: 100;
+  li {
+    @include scale(margin, 0 10px);
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    *display: inline;
+  }
+}
+
+.flex-control-paging {
+  a {
+    @include scale(width, 14px);
+    @include scale(height, 14px);
+    display: block;
+    background: white;
+    border: 1px solid $color-orange;
+    cursor: pointer;
+    text-indent: -9999em;
+    @include border-radius(50%);
+    @include no-select;
+
+    &.flex-active {
+      background: $color-orange;
+      //background: rgba(0, 0, 0, 0.9)
+      cursor: default;
+    }
+  }
+}
+
+@include at-breakpoint($tablet) {
+
+}
+
+
+@include at-breakpoint($small-desktop) {
+
+}
+
+
+
+
+@include at-breakpoint($tablet-only) {
+  .flex-control-nav {
+    background: white;
+  }
+}
+
+
+
+

@@ -1,0 +1,20 @@
+//GRID SETUP
+$column-width: 3.75em;
+$gutter-width: 1.875em;
+$grid-padding: 1.25em;
+
+//COLUMNS SETUP
+$total-columns: 4;
+$tablet: 40.063em 9;
+$small-desktop: 60.063em 12;
+$large-desktop: 12;
+
+
+$mobile-only: 0 40em;
+$tablet-only: 40.063em 60em;
+$mobile-tablet-only: 0 60em;
+$small-desktop-only: 60.063em 75.625em;
+
+@include border-box-sizing;
+
+//$media-layout: 60.063em 12;
