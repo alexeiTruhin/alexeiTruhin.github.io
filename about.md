@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Hi,
 
-### More Information
+I'm a Front-end Developer and JavaScript Engineer.
+BCs. in Computer Science (freshly graduated).
 
-A place to include any other types of information that you'd like to include about yourself.
+If you want to know more about me, look into my CV.
+
+<a href="/CV_Alexei_Truhin[Web].pdf"> Download CV</a>
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[alexei.truhin@gmail.com](mailto:alexei.truhin@gmail.com)
