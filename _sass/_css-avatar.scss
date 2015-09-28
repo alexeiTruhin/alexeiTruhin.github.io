@@ -1,0 +1,226 @@
+// Variables.
+$color-avatar: #3c203c;
+$color-avatar-background: #fff;
+$font-size-avatar: 16px;
+
+// Functions.
+@function em($size, $base-value: $font-size-avatar) {
+  @return ($size/$base-value*1em);
+}
+
+.css-avatar {
+  background: $color-avatar-background;
+  font-size: $font-size-avatar;
+  height: em(300px);
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  width: em(300px);
+
+  &__img img {
+    height: em(300px);
+    opacity: .5;
+    position: relative;
+    width: em(300px);
+    z-index: 999;
+
+  }
+
+  &__head {
+    background: $color-avatar;
+    border-radius: 100%;
+    left: em(68px); // (300-164)/2
+    height: em(164px);
+    position: absolute;
+    top: em(37px);
+    width: em(164px);
+    z-index: 20;
+  }
+
+  &__body {
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 10;
+    }
+
+    &:after {
+      width: em(175px);
+      background: $color-avatar-background;
+      height: em(50px);
+      left: em(63px);
+      top: em(110px);
+      z-index: 15;
+    }
+
+    &:before {
+      background: $color-avatar;
+      border-radius: 100%;
+      left: em(61px); // (300-178)/2
+      height: em(180px);
+      position: absolute;
+      top: em(88px);
+      width: em(178px);
+    }
+  }
+
+  &__wings {
+    &__left,
+    &__right {
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 30;
+      }
+
+      &:after {
+        background: $color-avatar-background;
+        border-radius: 100%;
+        content: "";
+        height: em(142px);
+        position: absolute;
+        top: em(155px);
+        width: em(142px);
+        z-index: 30;
+      }
+
+      &:before {
+        background: $color-avatar;
+        border-radius: 100%;
+        content: "";
+        height: em(65px);
+        position: absolute;
+        top: em(140px);
+        width: em(86px);
+        z-index: 30;
+      }
+    }
+
+    &__left {
+      &:after {
+        left: em(-73px);
+      }
+
+      &:before {
+        left: em(-5px);
+      }
+    }
+
+    &__right {
+      &:after {
+        right: em(-73px);
+      }
+
+      &:before {
+        right: em(-5px);
+      }
+    }
+  }
+
+  &__ears {
+    &:after,
+    &:before {
+      border: solid transparent;
+      border-bottom-color: $color-avatar;
+      border-width: em(40px) em(20px);
+      content: "";
+      height: 0;
+      position: absolute;
+      top: em(-7px);
+      width: 0;
+      z-index: 10;
+    }
+
+    &:after {
+      right: em(57px);
+      transform: rotate(42deg);
+    }
+
+    &:before {
+      left: em(57px);
+      transform: rotate(-42deg);
+    }
+  }
+
+  &__eyes {
+    &__left,
+    &__right {
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 40;
+      }
+
+      &:after {
+        background: $color-avatar-background;
+        border-radius: 100%;
+        height: em(12px);
+        top: em(101px);
+        width: em(12px);
+        z-index: 45;
+      }
+
+      &:before {
+        border: em(12px) solid $color-avatar-background;
+        background: $color-avatar;
+        border-radius: 100%;
+        height: em(63px);
+        top: em(75px);
+        width: em(63px);
+      }
+    }
+
+    &__left {
+      &:after {
+        left: em(108px);
+      }
+
+      &:before {
+        left: em(82px);
+      }
+    }
+
+    &__right {
+      &:after {
+        right: em(108px);
+      }
+
+      &:before {
+        right: em(82px);
+      }
+    }
+  }
+
+  &__nose {
+    background: $color-avatar-background;
+    border-radius: 100%;
+    height: em(24px);
+    left: em(139px);
+    position: absolute;
+    top: em(130px);
+    width: em(22px);
+    z-index: 40;
+
+    &:after,
+    &:before {
+      background: $color-avatar;
+      border-radius: 100%;
+      content: "";
+      height: em(24px);
+      position: absolute;
+      width: em(22px);
+      top: em(10px);
+    }
+
+    &:after {
+      left: em(-11px);
+    }
+
+    &:before {
+      right: em(-11px);
+    }
+  }
+}
